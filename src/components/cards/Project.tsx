@@ -4,6 +4,7 @@ import moment from "moment/moment";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { FaFileArchive } from "react-icons/fa";
+import { cn } from "@/lib/utils";
 
 export default function Project({
   project,
@@ -33,6 +34,9 @@ export default function Project({
             draggable={false}
             src={project.image.url}
             className={cn(
+              "object-cover",
+              project.invert && "invert dark:invert-0",
+            )}
             alt={project.title}
           />
           <AvatarFallback className="uppercase">

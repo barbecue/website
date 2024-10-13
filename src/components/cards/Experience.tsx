@@ -2,6 +2,7 @@ import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export default function Experience({
   experience,
@@ -31,7 +32,10 @@ export default function Experience({
           <AvatarImage
             draggable={false}
             src={experience.image.url}
-            className={`${experience.invert ? "invert dark:invert-0" : ""} object-cover`}
+            className={cn(
+              `object-cover`,
+              experience.invert && "invert dark:invert-0",
+            )}
             alt={experience.title}
           />
           <AvatarFallback className="uppercase">

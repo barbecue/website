@@ -29,6 +29,7 @@ export default function Head() {
         alt="@tuna.one"
         width={250}
         height={250}
+        priority={true}
         quality={100}
         className="size-40 select-none rounded-full border bg-gradient-to-br to-primary drop-shadow-2xl dark:from-accent/40"
       />

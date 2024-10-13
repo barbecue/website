@@ -4,6 +4,7 @@ import { getRaindrops } from "@/lib/raindrop";
 import moment from "moment";
 import Bookmark from "@/components/cards/Bookmark";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 async function fetchData() {
   return await getRaindrops();
@@ -39,7 +40,10 @@ export default async function Bookmarks({
   );
   return (
     <div
-      className={`${!fullPage && "col-span-2 rounded-lg border bg-card p-5"} flex w-full flex-col gap-3 drop-shadow-2xl`}
+      className={cn(
+        "flex w-full flex-col gap-3 drop-shadow-2xl",
+        !fullPage && "col-span-2 rounded-lg border bg-card p-5",
+      )}
     >
       {!fullPage && (
         <div className="flex w-full flex-row items-center justify-between">

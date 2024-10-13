@@ -4,6 +4,7 @@ import Repository from "@/components/cards/Repository";
 import { fallbackRepositories } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export default async function Repositories({
   fullPage = false,
@@ -25,7 +26,10 @@ export default async function Repositories({
 
   return (
     <div
-      className={`${!fullPage && "rounded-lg border bg-card p-5 xl:col-span-2"} flex w-full flex-col gap-3 drop-shadow-2xl`}
+      className={cn(
+        "flex w-full flex-col gap-3 drop-shadow-2xl",
+        !fullPage && "col-span-1 rounded-lg border bg-card p-5",
+      )}
     >
       {!fullPage && (
         <div className="flex w-full flex-row items-center justify-between">

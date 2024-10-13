@@ -3,6 +3,7 @@ import Link from "next/link";
 import Blog from "@/components/cards/Blog";
 import { Button } from "@/components/ui/button";
 import { getAllPosts } from "@/lib/contentful";
+import { cn } from "@/lib/utils";
 
 async function fetchData() {
   return await getAllPosts();
@@ -18,7 +19,10 @@ export default async function BlogPosts({
 
   return (
     <div
-      className={`${!fullPage && "col-span-2 rounded-lg border bg-card p-5"} flex w-full flex-col gap-3 drop-shadow-2xl`}
+      className={cn(
+        "flex w-full flex-col gap-3 drop-shadow-2xl",
+        !fullPage && "col-span-2 rounded-lg border bg-card p-5",
+      )}
     >
       {!fullPage && (
         <div className="flex w-full flex-row items-center justify-between">
