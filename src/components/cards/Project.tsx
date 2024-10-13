@@ -32,7 +32,7 @@ export default function Project({
           <AvatarImage
             draggable={false}
             src={project.image.url}
-            className={`${project.invert ? "invert dark:invert-0" : ""} object-cover`}
+            className={cn(
             alt={project.title}
           />
           <AvatarFallback className="uppercase">
