@@ -6,6 +6,7 @@ import Navbar from "@/components/layouts/Navbar";
 import React from "react";
 import { sharedTitle, sharedDescription } from "@/app/shared-metadata";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tuna.one"),
@@ -58,6 +59,7 @@ export default function RootLayout({
             {children}
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
