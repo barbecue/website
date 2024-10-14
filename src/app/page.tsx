@@ -20,19 +20,19 @@ export default function Page() {
         <Lanyard />
         <Head />
       </div>
-      <div className="grid w-full grid-cols-1 gap-x-6 gap-y-5 xl:grid-cols-2 xl:gap-y-10">
+      <div className="grid w-full grid-cols-1 gap-x-5 gap-y-5 xl:grid-cols-2 xl:gap-y-10">
         <Experiences />
         <PersonalProjects />
       </div>
-      <div className="grid w-full grid-cols-1 gap-x-6 gap-y-5 xl:auto-rows-[22rem] xl:grid-cols-3 xl:gap-y-10">
+      <div className="grid w-full grid-cols-1 gap-x-5 gap-y-5 xl:auto-rows-[22rem] xl:grid-cols-3 xl:gap-y-10">
         <RecentlyWatchedAnimes />
         <RecentlyListenedSongs />
       </div>
-      <div className="grid w-full grid-cols-1 gap-x-6 gap-y-5 xl:auto-rows-[22rem] xl:grid-cols-2 xl:gap-y-10">
+      <div className="grid w-full grid-cols-1 gap-x-5 gap-y-5 xl:auto-rows-[22rem] xl:grid-cols-2 xl:gap-y-10">
         <Repositories />
         <SocialMedia />
       </div>
-      <div className="grid w-full grid-cols-1 gap-x-6 gap-y-5 xl:auto-rows-[22rem] xl:grid-cols-4 xl:gap-y-10">
+      <div className="grid w-full grid-cols-1 gap-x-5 gap-y-5 xl:auto-rows-[22rem] xl:grid-cols-4 xl:gap-y-5">
         <BlogPosts />
         <Bookmarks />
         <Technologies />
