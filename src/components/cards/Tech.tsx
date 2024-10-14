@@ -23,9 +23,9 @@ export default function Tech({
         style={{
           backgroundColor: tech.backgroundColor,
         }}
-        className="rounded-lg p-1"
+        className="flex size-8 items-center justify-center rounded-sm p-1"
       >
-        <Icon icon={tech.icon} className="size-7 rounded-md" />
+        <Icon icon={tech.icon} className="size-5 rounded-[4px]" />
       </div>
       <span>{tech.title}</span>
     </Link>

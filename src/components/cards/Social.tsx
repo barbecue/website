@@ -18,6 +18,7 @@ export default function Social({
   return (
     <Link
       href={social.url}
+      target="_blank"
       className="group flex h-12 w-full cursor-pointer items-center justify-between rounded-lg border px-5 drop-shadow-xl transition-colors duration-300 hover:bg-secondary/80 dark:bg-primary dark:hover:bg-primary/70"
     >
       <div className="flex flex-row items-center gap-2">

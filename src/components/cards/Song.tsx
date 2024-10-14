@@ -23,7 +23,7 @@ export default function Song({
           alt={song.name}
           width={120}
           height={120}
-          className="size-10 rounded-lg bg-secondary"
+          className="size-10 rounded-sm bg-secondary"
         />
         <div className="flex w-full flex-col">
           <span className="line-clamp-1 text-sm">{song.name}</span>

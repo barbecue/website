@@ -20,13 +20,14 @@ export default function Anime({
           src={anime.animeImagePath}
           width={120}
           height={120}
-          className="size-10 rounded-lg bg-secondary object-cover"
+          className="size-10 rounded-sm bg-secondary object-cover"
           alt={anime.animeTitle}
         />
         <div className="flex flex-col">
           <span className="w-52 truncate text-sm">{anime.animeTitle}</span>
           <span className="text-sm text-muted">
-            {anime.numWatchedEpisodes}/{anime.animeNumEpisodes} Epsiodes
+            {anime.numWatchedEpisodes}/
+            {anime.animeNumEpisodes ? anime.animeNumEpisodes : "~"} Epsiodes
           </span>
         </div>
       </div>
