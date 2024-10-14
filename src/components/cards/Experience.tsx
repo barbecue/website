@@ -28,12 +28,12 @@ export default function Experience({
       className="flex h-20 w-full cursor-pointer items-center justify-between rounded-lg border px-5 drop-shadow-xl transition-colors duration-300 hover:bg-secondary/80 dark:bg-primary dark:hover:bg-primary/70"
     >
       <div className="flex flex-row items-center gap-3">
-        <Avatar className="size-[3.2rem] border p-1 dark:bg-gradient-to-br dark:from-accent dark:to-primary">
+        <Avatar className="size-[3.2rem] rounded-sm border p-1 dark:bg-gradient-to-br dark:from-accent dark:to-primary">
           <AvatarImage
             draggable={false}
             src={experience.image.url}
             className={cn(
-              `object-cover`,
+              "object-cover",
               experience.invert && "invert dark:invert-0",
             )}
             alt={experience.title}

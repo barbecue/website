@@ -29,7 +29,7 @@ export default function Project({
       className="flex h-20 w-full cursor-pointer items-center justify-between rounded-lg border px-5 drop-shadow-xl transition-colors duration-300 dark:bg-primary dark:hover:bg-primary/70"
     >
       <div className="flex flex-row items-center gap-3">
-        <Avatar className="size-[3.2rem] border p-1.5 dark:bg-gradient-to-br dark:from-accent dark:to-primary">
+        <Avatar className="size-[3.2rem] rounded-sm border p-1.5 dark:bg-gradient-to-br dark:from-accent dark:to-primary">
           <AvatarImage
             draggable={false}
             src={project.image.url}

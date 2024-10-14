@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { FaCopy, FaEnvelope } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 export default function Head() {
   return (
@@ -16,11 +17,14 @@ export default function Head() {
           </span>
         </div>
         <div className="flex flex-row gap-2">
-          <Button asChild size="sm" className="flex flex-row gap-1">
-            <Link href="mailto:me@tuna.one">
-              <FaEnvelope /> Contact Me
+          <RainbowButton>
+            <Link
+              href="mailto:me@tuna.one"
+              className="flex flex-row items-center gap-1.5"
+            >
+              <FaEnvelope /> Contact
             </Link>
-          </Button>
+          </RainbowButton>
         </div>
       </div>
       <Image

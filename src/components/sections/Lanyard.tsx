@@ -1,15 +1,9 @@
 "use client";
 import React from "react";
-import { FaSpotify } from "react-icons/fa6";
 import Link from "next/link";
-import {
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { Tooltip } from "@radix-ui/react-tooltip";
 import { cn } from "@/lib/utils";
 import { useLanyardWS, Snowflake } from "use-lanyard";
+import Listening from "@/components/sections/Listening";
 
 const userId: Snowflake = `${BigInt(process.env.NEXT_PUBLIC_DISCORD!)}`;
 const Lanyard = () => {
@@ -41,27 +35,7 @@ const Lanyard = () => {
           {data?.discord_status != "offline" ? "Online" : "Offline"}
         </span>
       </Link>
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <div
-              className={cn(
-                "relative flex flex-row items-center gap-2 rounded-full border border-zinc-600/40 bg-accent px-2 text-muted",
-                data?.spotify?.song ? "cursor-pointer" : "cursor-default",
-              )}
-            >
-              <FaSpotify className="size-3" />
-              <span className="max-w-56 truncate text-[13px]">
-                Listening To{" "}
-                {data?.spotify?.song ? data.spotify.song : "Nothing"}
-              </span>
-            </div>
-          </TooltipTrigger>
-          <TooltipContent className={cn(!data?.spotify?.song && "hidden")}>
-            From {data?.spotify?.artist}
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+      <Listening data={data} />
     </div>
   );
 };
