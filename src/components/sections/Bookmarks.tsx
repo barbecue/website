@@ -48,12 +48,7 @@ export default async function Bookmarks({
       {!fullPage && (
         <div className="flex w-full flex-row items-center justify-between">
           <span className="text-muted">Recently Added Bookmarks</span>
-          <Button
-            asChild
-            size="sm"
-            variant="outline"
-            className="!h-5 !px-2 !py-3"
-          >
+          <Button asChild size="sm" variant="outline" className="h-5 px-2 py-3">
             <Link
               href="/bookmarks"
               className="flex flex-row items-center gap-1 text-muted"

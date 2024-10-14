@@ -27,12 +27,7 @@ export default async function BlogPosts({
       {!fullPage && (
         <div className="flex w-full flex-row items-center justify-between">
           <span className="text-muted">Recently Posted Articles</span>
-          <Button
-            asChild
-            size="sm"
-            variant="outline"
-            className="!h-5 !px-2 !py-3"
-          >
+          <Button asChild size="sm" variant="outline" className="h-5 px-2 py-3">
             <Link
               href="/articles"
               className="flex flex-row items-center gap-1 text-muted"

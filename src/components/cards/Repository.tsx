@@ -20,7 +20,7 @@ export default function Repository({
     <Link
       href={repo.html_url}
       target="_blank"
-      className="flex h-16 w-full cursor-pointer items-center justify-between rounded-lg border px-2 drop-shadow-xl transition-colors duration-300 hover:bg-secondary/80 dark:bg-primary dark:hover:bg-primary/70"
+      className="flex h-16 w-full cursor-pointer items-center justify-between rounded-lg border px-5 drop-shadow-xl transition-colors duration-300 hover:bg-secondary/80 dark:bg-primary dark:hover:bg-primary/70"
     >
       <div className="flex flex-row items-center gap-2">
         <div className="flex flex-col">
@@ -40,7 +40,7 @@ export default function Repository({
               </div>
             )}
             {repo.archived && (
-              <span className="hidden flex-row items-center gap-1 rounded-full border border-zinc-600/40 bg-accent px-2 text-[12px] text-muted xl:flex">
+              <span className="hidden flex-row items-center gap-1 rounded-full border border-zinc-600/40 bg-accent px-5 text-[12px] text-muted xl:flex">
                 <FaFileArchive className="size-3" />
                 ARCHIVED
               </span>

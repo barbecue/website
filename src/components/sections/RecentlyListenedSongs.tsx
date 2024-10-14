@@ -44,7 +44,7 @@ export default async function RecentlyListenedSongs() {
           Recently Listened Songs
         </span>
       </div>
-      <div className="grid grid-cols-2 gap-x-3 gap-y-2">
+      <div className="grid grid-cols-1 gap-x-3 gap-y-2 lg:grid-cols-2">
         {recentlyPlayed.map((song, index) => (
           <Song song={song} key={index} />
         ))}

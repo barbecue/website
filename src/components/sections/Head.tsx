@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { FaCopy, FaEnvelope } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
 import { RainbowButton } from "@/components/ui/rainbow-button";

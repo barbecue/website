@@ -17,7 +17,7 @@ export default function Tech({
     <Link
       href={tech.href}
       target="_blank"
-      className="flex h-12 w-full cursor-pointer flex-row items-center gap-2 rounded-lg border px-2 text-sm drop-shadow-xl transition-colors duration-300 dark:bg-primary dark:hover:bg-primary/70 xl:text-base"
+      className="flex h-12 w-full cursor-pointer flex-row items-center gap-2 rounded-lg border px-5 text-sm drop-shadow-xl transition-colors duration-300 dark:bg-primary dark:hover:bg-primary/70 xl:text-base"
     >
       <div
         style={{

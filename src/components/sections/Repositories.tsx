@@ -36,12 +36,7 @@ export default async function Repositories({
           <span className="flex flex-row items-center gap-2 text-muted">
             Repositories
           </span>
-          <Button
-            asChild
-            size="sm"
-            variant="outline"
-            className="!h-5 !px-2 !py-3"
-          >
+          <Button asChild size="sm" variant="outline" className="h-5 px-2 py-3">
             <Link
               href="/repositories"
               className="flex flex-row items-center gap-1 text-muted"
