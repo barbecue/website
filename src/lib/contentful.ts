@@ -155,6 +155,7 @@ export async function getExperiences(preview = isDevelopment) {
             }
             title
             description
+            present
             role
             href
             startDate

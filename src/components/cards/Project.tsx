@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { FaFileArchive } from "react-icons/fa";
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 export default function Project({
   project,
@@ -44,14 +45,12 @@ export default function Project({
           </AvatarFallback>
         </Avatar>
         <div className="flex flex-col">
-          <span className="flex flex-row items-center gap-2">
-            {project.title}
+          <div className="flex flex-row items-center gap-2">
+            <span>{project.title}</span>
             {project.deprecated && (
-              <span className="flex h-5 flex-row items-center gap-1 rounded-full border border-red-500/50 bg-destructive/40 px-2 text-xs text-white drop-shadow-xl">
-                DEPRECATED
-              </span>
+              <Badge variant="destructive">DEPRECATED</Badge>
             )}
-          </span>
+          </div>
           <div className="flex flex-row gap-2">
             <span className="text-sm text-muted">{project.role}</span>
           </div>
