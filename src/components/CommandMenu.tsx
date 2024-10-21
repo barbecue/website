@@ -119,15 +119,27 @@ export function CommandMenu({
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup heading="Social">
-            {socials.map((social: Social) => (
-              <CommandItem
-                onSelect={() => handleRedirect(social.url, true)}
-                key={social.name}
-              >
-                <Icon icon={social.icon} className="mr-2 h-4 w-4" />
-                <span>{social.name}</span>
-              </CommandItem>
-            ))}
+            {socials
+              .sort(
+                (
+                  a: { sys: { publishedAt: string } },
+                  b: { sys: { publishedAt: string } },
+                ) => {
+                  return (
+                    (new Date(a.sys.publishedAt) as any) -
+                    (new Date(b.sys.publishedAt) as any)
+                  );
+                },
+              )
+              .map((social: Social) => (
+                <CommandItem
+                  onSelect={() => handleRedirect(social.url, true)}
+                  key={social.name}
+                >
+                  <Icon icon={social.icon} className="mr-2 h-4 w-4" />
+                  <span>{social.name}</span>
+                </CommandItem>
+              ))}
           </CommandGroup>
         </CommandList>
       </CommandDialog>
