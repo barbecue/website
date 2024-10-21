@@ -10,15 +10,19 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
-export default function ThemeSwitcher() {
+export default function ThemeSwitcher({ full }: { full: boolean }) {
   const { theme, setTheme } = useTheme();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          className="text-muted transition-colors duration-300 dark:hover:text-white"
+          className={cn(
+            "text-muted transition-colors duration-300 dark:hover:text-white",
+            !full && "border-primary backdrop-blur-2xl dark:bg-primary/30",
+          )}
           size="icon"
         >
           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

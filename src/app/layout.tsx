@@ -7,6 +7,7 @@ import React from "react";
 import { sharedTitle, sharedDescription } from "@/app/shared-metadata";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
+import { getSocials } from "@/lib/contentful";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tuna.one"),
@@ -40,11 +41,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  async function fetchData() {
+    return await getSocials();
+  }
+  const socials = await fetchData();
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
@@ -55,7 +60,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="mx-5 xl:mx-0">
-            <Navbar />
+            <Navbar socials={socials} />
             {children}
           </div>
         </ThemeProvider>

@@ -38,14 +38,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div className="flex w-full flex-col items-center justify-center gap-5 rounded-lg border bg-card px-5 py-4 drop-shadow-2xl">
-      <Image
-        src={image}
-        width={width}
-        height={height}
-        alt={title}
-        draggable={false}
-        className="h-96 rounded-lg object-cover"
-      />
+      <div className="aspect-video h-96 w-full px-4">
+        <Image
+          src={image}
+          width={width}
+          height={height}
+          alt={title}
+          draggable={false}
+          className="h-full w-full object-cover"
+        />
+      </div>
       <div className="flex flex-col gap-2 px-4">
         <h1 className="text-4xl font-medium capitalize">{title}</h1>
         <span className="text-xl text-muted">
