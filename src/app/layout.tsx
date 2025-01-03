@@ -51,21 +51,21 @@ export default async function RootLayout({
   }
   const socials = await fetchData();
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="mx-5 xl:mx-0">
-            <Navbar socials={socials} />
-            {children}
-          </div>
-        </ThemeProvider>
-        <Analytics />
-      </body>
-    </html>
+      <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="mx-5 xl:mx-0">
+              <Navbar socials={socials} />
+              {children}
+            </div>
+          </ThemeProvider>
+          <Analytics />
+        </body>
+      </html>
   );
 }
