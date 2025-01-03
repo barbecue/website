@@ -5,6 +5,7 @@ import { fallbackRepositories } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { kv } from "@vercel/kv";
 
 export default async function Repositories({
   fullPage = false,
@@ -12,15 +13,28 @@ export default async function Repositories({
   fullPage?: boolean;
 }) {
   let repositories: any[] = [];
+  const CACHE_KEY = "github_repositories";
+  const CACHE_DURATION = 3600;
 
   try {
-    const response = await fetch(
-      "https://api.github.com/users/barbecue/repos",
-      { cache: "force-cache" },
-    );
+    const cachedRepos = await kv.get<any[]>(CACHE_KEY);
 
-    repositories = await response.json();
+    if (cachedRepos) {
+      repositories = cachedRepos;
+    } else {
+      const response = await fetch(
+        "https://api.github.com/users/barbecue/repos",
+        { cache: "force-cache" },
+      );
+
+      repositories = await response.json();
+
+      await kv.set(CACHE_KEY, repositories, {
+        ex: CACHE_DURATION,
+      });
+    }
   } catch (error) {
+    console.error("Error fetching repositories:", error);
     repositories = fallbackRepositories;
   }
 

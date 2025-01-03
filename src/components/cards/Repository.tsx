@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaBoxArchive, FaCodeFork, FaStar } from "react-icons/fa6";
+import { FaCodeFork, FaStar } from "react-icons/fa6";
 import { ChevronRight } from "lucide-react";
 import { FaFileArchive } from "react-icons/fa";
 
