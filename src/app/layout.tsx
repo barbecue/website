@@ -12,6 +12,7 @@ import { ReCaptchaProvider } from "next-recaptcha-v3";
 import { Toaster } from "@/components/ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ScrollToTop from "@/components/ScrollToTop";
+import LenisScrollProvider from "@/components/LenisProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tuna.one"),
@@ -61,17 +62,19 @@ export default async function RootLayout({
     >
       <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
         <body>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="mx-5 xl:mx-0">
-              <Navbar socials={socials} />
-              {children}
-            </div>
-          </ThemeProvider>
+          <LenisScrollProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <div className="mx-5 xl:mx-0">
+                <Navbar socials={socials} />
+                {children}
+              </div>
+            </ThemeProvider>
+          </LenisScrollProvider>
           <ScrollToTop />
 
           <SpeedInsights />
